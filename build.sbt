@@ -4,6 +4,12 @@ version := "1.0-SNAPSHOT"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
-scalaVersion := "2.12.2"
+scalaVersion := "2.12.4"
 
-libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "3.0.0-M3" % Test
+libraryDependencies ++= Seq(
+  "org.scalatestplus.play" %% "scalatestplus-play" % "3.0.0" % Test,
+  "io.methvin.autodelegate" %% "macros" % "0.0.1" % "provided"
+)
+
+resolvers +=
+  "Sonatype OSS Releases" at "https://oss.sonatype.org/content/repositories/releases"
